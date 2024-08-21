@@ -1,3 +1,6 @@
+"""
+        class door
+        """
 class Door:
     """
     Diese Klasse beschreibt eine Türe mit der Eigenschaft color (Farbe) und den Zuständen
@@ -7,7 +10,8 @@ class Door:
     """
 
     # Mit dem Keyword def wird eine Funktion bzw. eben ein Konstruktor deklariert.
-    # Der Konstruktor trägt IMMER den Namen __init__ und weist als ersten Parameter den Wert self auf.
+    # Der Konstruktor trägt IMMER den Namen __init__
+    # und weist als ersten Parameter den Wert self auf.
     # Danach folgen die Übergabeparameter, deren Werte dann den Attributen zugewiesen werden.
     # Attribute können aber auch mit einem fixen Wert initialisiert werden.
     # Konstruktoren werden als Erstes im Programm angeschrieben.
@@ -32,13 +36,14 @@ class Door:
         Methode für das öffnen der Türe.
         Das ist aber nur möglich, wenn die Türe nicht verriegelt ist.
         """
-        if self._door_is_locked == False:
+        if self._door_is_locked is False:
             self._door_is_open = True
 
     def close_the_door(self):
         """
         Methode für das schliessen der Türe.
-        Das geht immer, auch wenn die Türe schon geschlossen oder verriegelt ist. Der Zustand ändert dann nämlich nicht.
+        Das geht immer, auch wenn die Türe schon geschlossen
+        oder verriegelt ist. Der Zustand ändert dann nämlich nicht.
         """
         self._door_is_open = False
 
@@ -48,7 +53,7 @@ class Door:
         Das ist nur möglich, wenn die Türe nicht offen ist.
         Für das verriegeln ist aber das Türschloss zuständig. Es weiss wie das geht.
         """
-        if self._door_is_open == False:
+        if self._door_is_open is False:
             self._door_is_locked = self._the_door_lock.lock()
 
     def unlock_the_door(self):
@@ -104,9 +109,8 @@ class Door:
         self._color = new_color
 
 
-"""
-nur für die korrekte Übersetzung und Ausführung 
-"""
+#nur für die korrekte Übersetzung und Ausführung
+
 
 
 class DoorLock:
@@ -116,11 +120,15 @@ class DoorLock:
 
     def __init__(self):
         print("ein Schloss erzeugt")
-
     def lock(self):
+        """
+        Lock the door
+        """
         return True
-
     def unlock(self):
+        """
+        Unlock the door
+        """
         return False
 
 
